@@ -74,6 +74,11 @@ dependencies:
     specifier: ^4.2.0
     version: 4.2.0(typescript@5.0.4)(vite@4.3.5)
 
+devDependencies:
+  '@builder.io/partytown':
+    specifier: ^0.8.0
+    version: 0.8.0
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
@@ -108,6 +113,11 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
     dev: false
+
+  /@builder.io/partytown@0.8.0:
+    resolution: {integrity: sha512-M6H7nSMwW2dHd1/MQ+9J1Jqdw22uhl1nKv90kIiL9G7gjFVqqouQp4qSS1oZclmtW1XjAa4Q5UnbHB4iytmxZA==}
+    hasBin: true
+    dev: true
 
   /@builder.io/qwik-city@1.1.1:
     resolution: {integrity: sha512-zF+hCFuugnYAWMG3UGBXo02AZiMpZsTnohCifLM+f0508YHEhWC0QzO2Y1LcyFxo8JVM89uzWNobJMrcF7G3jw==}

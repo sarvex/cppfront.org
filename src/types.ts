@@ -1,80 +1,80 @@
 export interface Post {
   /** A unique ID number that identifies a post. */
-  id: string;
+  id: string
 
   /** A post’s unique slug – part of the post’s URL based on its name, i.e. a post called “My Sample Page” has a slug “my-sample-page”. */
-  slug: string;
+  slug: string
 
   // /**  */
   // permalink: string;
 
   /**  */
-  publishDate: Date;
+  publishDate: Date
   /**  */
-  updateDate?: Date;
+  updateDate?: Date
 
   /**  */
-  title: string;
+  title: string
   /** Optional summary of post content. */
-  excerpt?: string;
+  excerpt?: string
   /**  */
-  image?: string;
+  image?: string
 
   /**  */
-  category?: string;
+  category?: string
   /**  */
-  tags?: Array<string>;
+  tags?: Array<string>
   /**  */
-  author?: string;
+  author?: string
 
   /**  */
-  metadata?: MetaData;
+  metadata?: MetaData
 
   /**  */
-  draft?: boolean;
+  draft?: boolean
 
   /**  */
-  content: string;
+  content: string
 
   /**  */
-  readingTime?: number;
+  readingTime?: number
 }
 
 export interface MetaData {
-  title?: string;
-  ignoreTitleTemplate?: boolean;
+  title?: string
+  ignoreTitleTemplate?: boolean
 
-  canonical?: string;
+  canonical?: string
 
-  robots?: MetaDataRobots;
+  robots?: MetaDataRobots
 
-  description?: string;
+  description?: string
 
-  openGraph?: MetaDataOpenGraph;
-  twitter?: MetaDataTwitter;
+  openGraph?: MetaDataOpenGraph
+  twitter?: MetaDataTwitter
 }
 
 export interface MetaDataRobots {
-  index?: boolean;
-  follow?: boolean;
+  index?: boolean
+  follow?: boolean
 }
 
 export interface MetaDataImage {
-  url: string;
-  width?: number;
-  height?: number;
+  url: string
+  width?: number
+  height?: number
 }
 
 export interface MetaDataOpenGraph {
-  url?: string;
-  siteName?: string;
-  images?: Array<MetaDataImage>;
-  locale?: string;
-  type?: string;
+  url?: string
+  siteName?: string
+  images?: Array<MetaDataImage>
+  locale?: string
+  type?: string
 }
 
 export interface MetaDataTwitter {
-  handle?: string;
-  site?: string;
-  cardType?: string;
+  handle?: string
+  site?: string
+  cardType?: string
 }

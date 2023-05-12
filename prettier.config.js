@@ -1,6 +1,7 @@
 // prettier.config.js or .prettierrc.js
 module.exports = {
-  trailingComma: "all",
+  bracketSameLine: true,
+  trailingComma: 'all',
   semi: false,
   singleQuote: true,
-};
+}

@@ -1,27 +1,27 @@
-import fs from "fs";
-import matter from "gray-matter";
+import fs from 'fs'
+import matter from 'gray-matter'
 
-import type { Post } from "~/types";
+import type { Post } from '~/types'
 
-const BLOG_DIR = "src/content/blog";
+const BLOG_DIR = 'src/content/blog'
 
 const load = () => {
-  const files = fs.readdirSync(BLOG_DIR);
+  const files = fs.readdirSync(BLOG_DIR)
 
   const posts = Promise.all(
     files
-      .filter((filename) => filename.endsWith(".md"))
+      .filter((filename) => filename.endsWith('.md'))
       .map(async (filename) => {
-        const slug = filename.replace(".md", "");
-        return await findPostBySlug(slug);
-      })
+        const slug = filename.replace('.md', '')
+        return await findPostBySlug(slug)
+      }),
     // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  );
+  )
 
-  return posts;
-};
+  return posts
+}
 
-let _posts: Post[];
+let _posts: Post[]
 
 // Ensure only the minimal needed data is exposed
 // fields.forEach((field) => {
@@ -39,27 +39,32 @@ let _posts: Post[];
 
 /** */
 export const fetchPosts = async (): Promise<Post[]> => {
-  _posts = _posts || load();
+  _posts = _posts || load()
 
-  return await _posts;
-};
+  return _posts
+}
 
 /** */
-export const findLatestPosts = async ({ count, page }: { count?: number; page?: number } = {}): Promise<Post[]> => {
-  const _count = count || 4;
-  const _page = page || 1;
-  const posts = await fetchPosts();
+export const findLatestPosts = async ({
+  count,
+  page,
+}: { count?: number; page?: number } = {}): Promise<Post[]> => {
+  const _count = count || 4
+  const _page = page || 1
+  const posts = await fetchPosts()
 
-  return posts ? posts.slice((_page - 1) * _count, (_page - 1) * _count + _count) : [];
-};
+  return posts
+    ? posts.slice((_page - 1) * _count, (_page - 1) * _count + _count)
+    : []
+}
 
 /** */
 export const findPostBySlug = async (slug: string): Promise<Post | null> => {
-  if (!slug) return null;
+  if (!slug) return null
 
   try {
-    const readFile = fs.readFileSync(BLOG_DIR + `/${slug}.md`, "utf-8");
-    const { data, content } = matter(readFile);
+    const readFile = fs.readFileSync(`${BLOG_DIR}/${slug}.md`, 'utf8')
+    const { data, content } = matter(readFile)
 
     const {
       publishDate: rawPublishDate = new Date(),
@@ -72,10 +77,10 @@ export const findPostBySlug = async (slug: string): Promise<Post | null> => {
       author,
       draft = false,
       metadata = {},
-    } = data;
+    } = data
 
-    const publishDate = new Date(rawPublishDate);
-    const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
+    const publishDate = new Date(rawPublishDate)
+    const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined
 
     return {
       id: slug,
@@ -96,25 +101,25 @@ export const findPostBySlug = async (slug: string): Promise<Post | null> => {
 
       metadata,
 
-      content
-    };
+      content,
+    }
   } catch (e) {
     /* empty */
   }
 
-  return null;
-};
+  return null
+}
 
 /** */
 export const findPostsByIds = async (ids: string[]) => {
-  if (!Array.isArray(ids)) return [];
+  if (!Array.isArray(ids)) return []
 
-  const posts = await fetchPosts();
+  const posts = await fetchPosts()
 
   return ids.reduce(function (r: Post[], id: string) {
     posts.some(function (post: Post) {
-      return id === post.id && r.push(post);
-    });
-    return r;
-  }, []);
-};
+      return id === post.id && r.push(post)
+    })
+    return r
+  }, [])
+}

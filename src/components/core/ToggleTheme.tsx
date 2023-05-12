@@ -1,26 +1,25 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from '@builder.io/qwik'
 
-import { IconSun } from "~/components/icons/IconSun";
-import { IconMoon } from "../icons/IconMoon";
+import { IconSun } from '~/components/icons/IconSun'
+import { IconMoon } from '../icons/IconMoon'
 
 interface ItemProps {
-  iconClass?: string;
+  iconClass?: string
 }
 
 export default component$((props: ItemProps) => {
-  const { iconClass } = props;
+  const { iconClass } = props
   const store = useStore({
     theme:
-      (typeof window !== "undefined" && window?.localStorage?.theme) ||
+      (typeof window !== 'undefined' && window?.localStorage?.theme) ||
       undefined,
-  });
+  })
 
   useVisibleTask$(() => {
-    store.theme =
-      document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
-  });
+    store.theme = document.documentElement.classList.contains('dark')
+      ? 'dark'
+      : 'light'
+  })
 
   return (
     <button
@@ -29,22 +28,21 @@ export default component$((props: ItemProps) => {
       aria-label="Toggle between Dark and Light mode"
       onClick$={() => {
         switch (store.theme) {
-          case "dark":
-            document.documentElement.classList.remove("dark");
-            store.theme = window.localStorage.theme = "light";
-            break;
+          case 'dark':
+            document.documentElement.classList.remove('dark')
+            store.theme = window.localStorage.theme = 'light'
+            break
           default:
-            document.documentElement.classList.add("dark");
-            store.theme = window.localStorage.theme = "dark";
-            break;
+            document.documentElement.classList.add('dark')
+            store.theme = window.localStorage.theme = 'dark'
+            break
         }
-      }}
-    >
-      {store.theme == "dark" ? (
+      }}>
+      {store.theme == 'dark' ? (
         <IconMoon class={iconClass} />
       ) : (
         <IconSun class={iconClass} />
       )}
     </button>
-  );
-});
+  )
+})
