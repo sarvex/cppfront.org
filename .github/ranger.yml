@@ -35,18 +35,18 @@ commits:
     pattern: BREAKING CHANGE
     labels: 
       - Major Version
-	- action: label
-	  pattern: /perf.+?:/
-	  labels: 
+  - action: label
+    pattern: /perf.+?:/
+    labels: 
        - Major Version
-	- action: label
-	  pattern: /feat.+?:/
-	  labels: 
-	    - Minor Version
-	- action: label
-	  pattern: /fix.+?:/
-	  labels: 
-	    - Patch Version
+  - action: label
+    pattern: /feat.+?:/
+    labels: 
+      - Minor Version
+  - action: label
+    pattern: /fix.+?:/
+    labels: 
+      - Patch Version
   - action: label
     pattern: /merge when passing/i
     labels:
