@@ -8,8 +8,8 @@ devDependencies:
     specifier: 1.1.2
     version: 1.1.2(undici@5.22.1)
   '@builder.io/qwik-city':
-    specifier: 1.1.1
-    version: 1.1.1
+    specifier: 1.1.2
+    version: 1.1.2
   '@builder.io/sdk-qwik':
     specifier: 0.3.0
     version: 0.3.0(@builder.io/qwik@1.1.2)
@@ -176,8 +176,8 @@ packages:
     hasBin: true
     dev: true
 
-  /@builder.io/qwik-city@1.1.1:
-    resolution: {integrity: sha512-zF+hCFuugnYAWMG3UGBXo02AZiMpZsTnohCifLM+f0508YHEhWC0QzO2Y1LcyFxo8JVM89uzWNobJMrcF7G3jw==}
+  /@builder.io/qwik-city@1.1.2:
+    resolution: {integrity: sha512-rA0Q9c/A6b3qpAI+opizRgwO0rLXvU+AdJomUtnHX4D/H8XZisbCLVLM8hrDmPckmADgNcHMJlxaawiGPgVqaA==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     dependencies:
       '@mdx-js/mdx': 2.3.0
