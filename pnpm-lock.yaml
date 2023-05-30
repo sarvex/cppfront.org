@@ -12,8 +12,8 @@ dependencies:
     specifier: 1.1.4
     version: 1.1.4
   '@fontsource/inter':
-    specifier: 5.0.1
-    version: 5.0.1
+    specifier: 5.0.2
+    version: 5.0.2
   '@unpic/qwik':
     specifier: 0.0.19
     version: 0.0.19(@builder.io/qwik@1.1.4)
@@ -355,8 +355,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/inter@5.0.1:
-    resolution: {integrity: sha512-jezFhHp0HcVy2t6M6r89EcxkT30vx0ofGauveQWQ81j70N/wNDYs4zI+sedeend6zF9GXIEqpOTO2D1k7VQX4w==}
+  /@fontsource/inter@5.0.2:
+    resolution: {integrity: sha512-pQ1ms5nbprD+7Dnu5h0T9XOSJi5pvOanLCxi6mA9/5wclXFkkzvZo31ddoD8/Urncx11967qTnvGglPeWEOT+Q==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
