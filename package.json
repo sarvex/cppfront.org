@@ -25,22 +25,22 @@
     "qwik": "qwik"
   },
   "dependencies": {
-    "@builder.io/qwik": "1.2.2",
-    "@builder.io/qwik-city": "1.2.2",
-    "@fontsource/inter": "5.0.3",
+    "@builder.io/qwik": "1.2.4",
+    "@builder.io/qwik-city": "1.2.4",
+    "@fontsource/inter": "5.0.4",
     "@unpic/qwik": "0.0.20",
     "gray-matter": "4.0.3",
     "markdown-it": "13.0.1",
     "node-fetch": "3.3.1"
   },
   "devDependencies": {
-    "@builder.io/sdk-qwik": "0.4.2",
+    "@builder.io/sdk-qwik": "0.4.4",
     "@playwright/test": "1.35.1",
     "@types/eslint": "8.40.2",
-    "@types/node": "20.3.2",
+    "@types/node": "20.3.3",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
-    "@vitest/ui": "0.32.2",
+    "@vitest/ui": "0.32.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.44.0",
     "eslint-plugin-qwik": "1.2.4",
@@ -51,6 +51,6 @@
     "undici": "5.22.1",
     "vite": "4.3.9",
     "vite-tsconfig-paths": "4.2.0",
-    "vitest": "0.32.2"
+    "vitest": "0.32.4"
   }
 }
