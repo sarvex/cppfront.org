@@ -1,8 +1,9 @@
-// prettier.config.js or .prettierrc.js
-module.exports = {
-	bracketSameLine: true,
-	trailingComma: "all",
-	semi: false,
-	singleQuote: true,
-	printWidth: 120,
+/** @type {import("prettier").Options} */
+const config = {
+  bracketSameLine: true,
+  trailingComma: 'all',
+  semi: true,
+  singleQuote: true,
 };
+
+module.exports = config;

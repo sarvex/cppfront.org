@@ -28,7 +28,7 @@ export const useAddToListAction = routeAction$(
   },
   zod$({
     text: z.string().trim().min(1),
-  })
+  }),
 );
 
 export default component$(() => {
@@ -46,13 +46,15 @@ export default component$(() => {
       <div role="presentation" class="ellipsis"></div>
 
       <div class="container container-center">
-        {(list.value.length && (
+        {list.value.length === 0 ? (
+          <span class={styles.empty}>No items found</span>
+        ) : (
           <ul class={styles.list}>
             {list.value.map((item, index) => (
               <li key={`items-${index}`}>{item.text}</li>
             ))}
           </ul>
-        )) || <span class={styles.empty}>No items found</span>}
+        )}
       </div>
 
       <div class="container container-center">
@@ -63,7 +65,9 @@ export default component$(() => {
           </button>
         </Form>
 
-        <p class={styles.hint}>PS: This little app works even when JavaScript is disabled.</p>
+        <p class={styles.hint}>
+          PS: This little app works even when JavaScript is disabled.
+        </p>
       </div>
     </>
   );

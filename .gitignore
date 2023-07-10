@@ -25,7 +25,9 @@ lerna-debug.log*
 
 # Editor
 .vscode/*
-!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/*.code-snippets
+
 .idea
 .DS_Store
 *.suo
@@ -38,5 +40,5 @@ lerna-debug.log*
 .yarn/*
 !.yarn/releases
 
-# Netlify
-.netlify
+# Vercel
+.vercel

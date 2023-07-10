@@ -21,6 +21,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "files": ["./.eslintrc.cjs"],
-  "include": ["src", "./*.d.ts"]
+  "files": ["./.eslintrc.js", "./prettier.config.js"],
+  "include": ["src", "./*.d.ts", "./*.config.ts"]
 }
